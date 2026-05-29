@@ -73,7 +73,7 @@ Interactive Streamlit Web Application
 
 ## 1. Clone the Repository
 
-git clone https://github.com/YOUR_USERNAME/GeoAI-DisasterMapper.git
+git clone https://github.com/Melina-Singh/GeoAI-DisasterMapper.git
 
 cd GeoAI-DisasterMapper
 
