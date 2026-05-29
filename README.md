@@ -98,7 +98,6 @@ pip install -r requirements.txt
 ---
 
 ## 4. Download Trained Model
-
 Download:
 best_model_resnet50.pth
 
