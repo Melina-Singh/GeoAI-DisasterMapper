@@ -18,7 +18,8 @@ The system uses before-and-after satellite image pairs to identify structural da
 This project was built as a research portfolio project for Graduate Research Assistant applications in GeoAI, Remote Sensing, and Climate Change.
 
 ---
-
+DEMO : https://huggingface.co/spaces/meli9/geoai-disastermapper
+---
 # 🗺️ Key Features
 
 * Automated building damage detection from satellite imagery
