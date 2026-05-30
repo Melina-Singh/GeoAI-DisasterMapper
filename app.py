@@ -8,8 +8,31 @@ from matplotlib.colors import ListedColormap
 import io
 import os
 import sys
+from huggingface_hub import hf_hub_download
 
 sys.path.append(os.path.dirname(__file__))
+
+# ── Model Download from Hugging Face ─────────────────────────────────────────
+MODEL_PATH  = "model/best_model_resnet50.pth"
+HF_REPO_ID  = "meli9/geoai-disastermapper"
+HF_FILENAME = "best_model_resnet50.pth"
+
+@st.cache_resource
+def download_model():
+    """Download model from Hugging Face if not present locally."""
+    if not os.path.exists(MODEL_PATH):
+        os.makedirs("model", exist_ok=True)
+        with st.spinner("Downloading model from Hugging Face... (452MB — first load only)"):
+            hf_hub_download(
+                repo_id   = HF_REPO_ID,
+                filename  = HF_FILENAME,
+                local_dir = "model"
+            )
+        st.success("Model ready ✓")
+    return MODEL_PATH
+
+# Download on startup
+download_model()
 
 from utils.inference import (
     load_model, run_inference, get_damage_stats,
@@ -210,12 +233,16 @@ st.markdown("""
 with st.sidebar:
     st.markdown('<p class="section-header">⚙️ Configuration</p>', unsafe_allow_html=True)
 
-    # Model path
-    model_path = st.text_input(
-        "Model Path",
-        value="model/best_model_resnet50.pth",
-        help="Path to trained U-Net model"
-    )
+    # Model path — auto set from HF download
+    model_path = MODEL_PATH
+    st.markdown(f"""
+    <div style='background:#1a2035; border:1px solid #00d4ff33;
+                border-radius:8px; padding:0.8rem; font-size:0.8rem;'>
+        <b style='color:#00d4ff;'>Model</b><br>
+        U-Net ResNet50<br>
+        <span style='color:#64748b;'>Auto-loaded from Hugging Face</span>
+    </div>
+    """, unsafe_allow_html=True)
 
     st.markdown("---")
     st.markdown('<p class="section-header">📍 Location</p>', unsafe_allow_html=True)
