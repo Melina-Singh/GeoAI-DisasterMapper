@@ -1,0 +1,45 @@
+
+# Model weights — too large for GitHub (hosted on Hugging Face)
+model/*.pth
+model/*.pt
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.egg-info/
+dist/
+build/
+
+# Virtual environment
+geoenv/
+venv/
+env/
+.venv/
+
+# Jupyter notebooks checkpoints
+.ipynb_checkpoints/
+
+# VS Code
+.vscode/
+
+# Environment variables
+.env
+.env.local
+
+# Large data files
+*.tar
+*.tar.gz
+*.zip
+*.tif
+*.tiff
+*.npy
+
+# Outputs — optional, comment out if you want to push sample results
+# outputs/
+
+# OS files
+.DS_Store
+Thumbs.db
