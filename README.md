@@ -2,10 +2,7 @@
 
 > Automated Building Damage Detection from Satellite Imagery using Deep Learning and Climate Vulnerability Analysis
 
-![Python](https://img.shields.io/badge/Python-3.10+-blue)
-![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red)     
-![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-green)
-![License](https://img.shields.io/badge/License-MIT-yellow)
+![Python](https://img.shields.io/badge/Python-3.10+-blue) ![PyTorch](https://img.shields.io/badge/PyTorch-2.0+-red) ![Streamlit](https://img.shields.io/badge/Streamlit-1.28+-green) ![License](https://img.shields.io/badge/License-MIT-yellow)
 ---
 
 # 📌 Overview
